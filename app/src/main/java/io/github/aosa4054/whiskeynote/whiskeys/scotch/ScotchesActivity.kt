@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import io.github.aosa4054.whiskeynote.R
+import io.github.aosa4054.whiskeynote.R.id.toolbar
 import io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyActivity
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding

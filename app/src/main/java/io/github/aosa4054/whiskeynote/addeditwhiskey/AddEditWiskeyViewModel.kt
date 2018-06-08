@@ -1,14 +1,17 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
+import android.app.AlertDialog
 import android.app.Application
+import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
 import android.content.Intent
 import android.content.Intent.getIntent
+import android.widget.Toast
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
 class AddEditWiskeyViewModel(application: Application, private val mScotchRepository: ScotchRepository,
-                             private val typeFrag: Int) {
+                             var typeFrag: Int): AndroidViewModel(application) {
 
     /*LiveDataいらんくね
     private val mAllScotches: MutableLiveData<List<Scotch>> = mScotchRepository.getAllScotches()
@@ -37,6 +40,11 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
     }
     */
 
+    private var mAddEditWhiskeyNavigator: AddEditWhiskeyNavigator? = null
+
+    fun setNavigator(navigator: AddEditWhiskeyNavigator){
+        mAddEditWhiskeyNavigator = navigator
+    }
 
     //private var mIsNewWhiskey: Boolean = false
 
@@ -47,7 +55,19 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
             2 -> saveAmerican()
             3 -> saveJapanese()
             4 -> saveOthers()
-            //else ->
+            else -> mAddEditWhiskeyNavigator?.chooseWhiskeyType()
+                    ?: Toast.makeText(getApplication(), "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    //saveWhiskeyでうまく保存できず、Dialog経由で保存する場合のメソッド
+    fun saveWhiskeyViaDialog(flag: Int){
+        when (flag){
+            1 -> saveScotch()
+            2 -> saveAmerican()
+            3 -> saveJapanese()
+            4 -> saveOthers()
+            else -> Toast.makeText(getApplication(), "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -61,6 +81,10 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
     fun saveJapanese(){}
 
     fun saveOthers(){}
+
+    fun onActivityDestroyed(){
+        mAddEditWhiskeyNavigator = null
+    }
 
     //fun isNewWhiskey(): Boolean{return mIsNewWhiskey}
 }
