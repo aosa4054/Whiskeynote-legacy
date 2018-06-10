@@ -13,7 +13,6 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
 
     lateinit var mViewModel: AddEditWiskeyViewModel
     private var typeFrag: Int = intent.getIntExtra("TYPE_FRAG", 0)
-    //TODO: typeFlagの渡し方とViewModelのコンストラクタの振る舞いについて確認する
 
     companion object {
         val REQUEST_CODE: Int = 1
@@ -24,8 +23,7 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
         setContentView(R.layout.activity_addeditwhiskey)
 
         mViewModel = ViewModelProviders.of(this).get(AddEditWiskeyViewModel::class.java)
-        mViewModel.setNavigator(this)
-        mViewModel.typeFrag = typeFrag
+        mViewModel.onActivityCreated(this, typeFrag)
     }
 
     override fun onDestroy() {

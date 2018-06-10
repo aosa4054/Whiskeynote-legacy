@@ -42,10 +42,6 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
 
     private var mAddEditWhiskeyNavigator: AddEditWhiskeyNavigator? = null
 
-    fun setNavigator(navigator: AddEditWhiskeyNavigator){
-        mAddEditWhiskeyNavigator = navigator
-    }
-
     //private var mIsNewWhiskey: Boolean = false
 
     //frag: 1->Scotch, 2->American, 3->Japanese, 4->Others
@@ -58,6 +54,11 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
             else -> mAddEditWhiskeyNavigator?.chooseWhiskeyType()
                     ?: Toast.makeText(getApplication(), "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun onActivityCreated(navigator: AddEditWhiskeyNavigator, typeflag: Int){
+        mAddEditWhiskeyNavigator = navigator
+        typeFrag = typeflag
     }
 
     //saveWhiskeyでうまく保存できず、Dialog経由で保存する場合のメソッド
