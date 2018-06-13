@@ -22,6 +22,9 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
     lateinit var mAdapter: ScotchRecyclerViewAdapter
     lateinit var binding: ScotchesListItemBinding
 
+    var fragment: ScotchesFragment? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scotches)

@@ -12,6 +12,7 @@ class ScotchRecyclerViewAdapter(var scotches: List<Scotch>):
         RecyclerView.Adapter<ScotchRecyclerViewAdapter.ScotchViewHolder>()/*, View.OnClickListener*/ {
 
     private var mRecycler: RecyclerView? = null
+    private var mScotchItemNavigator: ScotchItemNavigator? = null
     //private var mListener: AdapterView.OnItemClickListener? = null
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
