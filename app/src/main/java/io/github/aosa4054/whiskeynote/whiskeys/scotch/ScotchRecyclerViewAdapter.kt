@@ -8,11 +8,10 @@ import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
 
-class ScotchRecyclerViewAdapter(var scotches: List<Scotch>):
+class ScotchRecyclerViewAdapter(var scotches: List<Scotch>, var mNavigator: ScotchItemNavigator?):
         RecyclerView.Adapter<ScotchRecyclerViewAdapter.ScotchViewHolder>()/*, View.OnClickListener*/ {
 
     private var mRecycler: RecyclerView? = null
-    private var mScotchItemNavigator: ScotchItemNavigator? = null
     //private var mListener: AdapterView.OnItemClickListener? = null
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
@@ -37,6 +36,10 @@ class ScotchRecyclerViewAdapter(var scotches: List<Scotch>):
 
     override fun getItemCount(): Int {
         return scotches.size
+    }
+
+    fun onDestroy(){
+        mNavigator = null
     }
 
     /*

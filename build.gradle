@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.41'
+    ext.kotlin_version = '1.2.51'
     repositories {
         google()
         jcenter()
@@ -30,10 +30,12 @@ task clean(type: Delete) {
 ext {
     supportLibraryVersion = '27.1.1'
 
-    roomVersion = '1.1.1-rc1'
+    roomVersion = '1.1.1'
     archLifecycleVersion = '1.1.1'
 
     rxandroidVersion = "2.0.1"
     rxjavaVersion = "2.0.1"
     threetenabp = "1.0.5"
+
+    navigationVersion = '1.0.0-alpha02'
 }
