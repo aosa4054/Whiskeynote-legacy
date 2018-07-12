@@ -3,17 +3,55 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
     tools:context=".top.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp">
+    tools:layout_editor_absoluteY="8dp"
+    -->
 
+    <!--
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container"
+        tools:ignore="MissingConstraints" />
+    -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/topToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="0dp"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway"
+            android:text="@string/app_name"
+
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="24dp" />
+
+        </android.support.v7.widget.Toolbar>
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/nav_main"
+        app:defaultNavHost="true"
         tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

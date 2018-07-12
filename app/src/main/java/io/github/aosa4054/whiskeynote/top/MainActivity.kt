@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
+import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
@@ -16,7 +17,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        findOrCreateFragment(savedInstanceState)
+        val mToolbar = findViewById<Toolbar>(R.id.topToolbar)
+        setSupportActionBar(mToolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
     fun toScotch(view: View){
@@ -34,16 +37,6 @@ class MainActivity : AppCompatActivity() {
 
     fun toOthers(view: View){
         Toast.makeText(applicationContext, "その他", LENGTH_SHORT).show()
-    }
-
-
-    fun findOrCreateFragment(savedInstanceState: Bundle?){
-        if (savedInstanceState == null){
-            val mainFragment = MainFragment()
-            val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-            transaction.add(R.id.container, MainFragment())
-            transaction.commit()
-        }
     }
 
 }

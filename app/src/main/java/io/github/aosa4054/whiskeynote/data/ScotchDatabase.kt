@@ -5,8 +5,9 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import io.github.aosa4054.whiskeynote.data.dao.ScotchDao
+import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
-@Database(entities = arrayOf(ScotchDao::class), version = 1)
+@Database(entities = arrayOf(Scotch::class), version = 1)
 abstract class ScotchDatabase: RoomDatabase(){
     abstract fun scotchDao(): ScotchDao
 

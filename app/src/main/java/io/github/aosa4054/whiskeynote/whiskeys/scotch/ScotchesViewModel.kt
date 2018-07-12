@@ -11,7 +11,7 @@ import io.github.aosa4054.whiskeynote.data.entity.Scotch
 open class ScotchesViewModel(application: Application, private val mScotchRepository: ScotchRepository):
         AndroidViewModel(application){
 
-    private var mAllScotches: MutableLiveData<List<Scotch>> = mScotchRepository.getAllScotches()
+    private var mAllScotches: LiveData<List<Scotch>> = mScotchRepository.getAllScotches()
     lateinit var imgTag: MutableLiveData<String>
     lateinit var name: MutableLiveData<String>
     private var mScotchesNavigator: ScotchesNavigator? = null

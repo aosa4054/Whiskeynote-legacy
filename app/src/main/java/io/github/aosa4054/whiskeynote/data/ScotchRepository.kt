@@ -10,7 +10,7 @@ import io.github.aosa4054.whiskeynote.data.entity.Scotch
 class ScotchRepository(application: Application){
 
     private var mScotchDao: ScotchDao
-    private var mAllScotches: MutableLiveData<List<Scotch>>
+    private var mAllScotches: LiveData<List<Scotch>>
 
     init {
         val db: ScotchDatabase = ScotchDatabase.getInstance(application)
@@ -39,7 +39,7 @@ class ScotchRepository(application: Application){
          return mScotchDao.getSctchById(scotchId)
      }
 
-    fun getAllScotches(): MutableLiveData<List<Scotch>> {
+    fun getAllScotches(): LiveData<List<Scotch>> {
         return mAllScotches
     }
 

@@ -29,12 +29,13 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scotches)
 
+        /*
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { _ ->
             addNewScotch()
         }
-
+        */
 
         mViewModel = ViewModelProviders.of(this).get(ScotchesViewModel::class.java)
         mViewModel.setNavigators(this, this)
@@ -49,7 +50,7 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
         recyclerView.setHasFixedSize(true)
         val manager: LinearLayoutManager = LinearLayoutManager(this)
         manager.orientation = LinearLayoutManager.VERTICAL
-        mAdapter = ScotchRecyclerViewAdapter(ArrayList<Scotch>())
+        mAdapter = ScotchRecyclerViewAdapter(ArrayList<Scotch>(), this)
         recyclerView.layoutManager = manager
         recyclerView.adapter = mAdapter
 

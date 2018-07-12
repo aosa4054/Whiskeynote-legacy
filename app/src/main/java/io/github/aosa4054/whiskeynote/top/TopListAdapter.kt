@@ -3,6 +3,7 @@ package io.github.aosa4054.whiskeynote.top
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.graphics.Color
 import android.support.annotation.ColorRes
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -36,7 +37,7 @@ class TopListAdapter(private var context: Context, private var data: MutableList
         return 0
     }
 
-    @SuppressLint("ResourceAsColor")
+    //@SuppressLint("ResourceAsColor")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view = convertView
         lateinit var holder: ViewHolder
@@ -50,10 +51,10 @@ class TopListAdapter(private var context: Context, private var data: MutableList
             view.tag = holder
 
             when (position){
-                0 -> view.setBackgroundColor(R.color.colorPrimary300)
-                1 -> view.setBackgroundColor(R.color.colorPrimary500)
-                2 -> view.setBackgroundColor(R.color.colorPrimary700)
-                3 -> view.setBackgroundColor(R.color.colorPrimary)
+                0 -> view.setBackgroundColor(Color.parseColor("#e568ab"))
+                1 -> view.setBackgroundColor(Color.parseColor("#d1257e"))
+                2 -> view.setBackgroundColor(Color.parseColor("#a4226f"))
+                3 -> view.setBackgroundColor(Color.parseColor("#5b1049"))
             }
 
         }else{
