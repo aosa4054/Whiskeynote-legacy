@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/scotchesFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="io.github.aosa4054.whiskeynote.top.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" ></fragment>
+    <fragment
+        android:id="@+id/scotchesFragment"
+        android:name="io.github.aosa4054.whiskeynote.whiskeys.scotch.ScotchesFragment"
+        android:label="fragment_scotches"
+        tools:layout="@layout/fragment_scotches" />
 </navigation>
