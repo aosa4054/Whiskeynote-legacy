@@ -3,8 +3,10 @@ package io.github.aosa4054.whiskeynote.whiskeys.scotch
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,7 +33,7 @@ class ScotchesFragment: Fragment(){
         */
 
         /*
-        以下はonActivityCreatedに記述？
+        以下はonActivityCreatedに記述？ (TODOs)
         TODO: setup toolbar
         TODO: setup fab
         TODO: setup RecyclerView (maintain related classes like Adapter)
@@ -42,13 +44,17 @@ class ScotchesFragment: Fragment(){
 
         // Set up the tool bar
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
-        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(activity!!, view.product_grid, AccelerateDecelerateInterpolator()))
+        (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+                activity!!, view.product_grid, AccelerateDecelerateInterpolator(),
+                ContextCompat.getDrawable(context!!, R.drawable.baseline_menu_white_24dp),
+                ContextCompat.getDrawable(context!!, R.drawable.baseline_close_white_24dp)))
 
         // Set up the RecyclerView
         
         // Set cut corner background for API 23+
 
-        return view;
+        return view
 
     }
 

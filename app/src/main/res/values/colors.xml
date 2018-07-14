@@ -23,4 +23,5 @@
     <color name="colorSecondary200">#ff9d8d</color>
     <color name="colorSecondary100">#ffcabf</color>
     <color name="colorSecondary50">#ffe6e2</color>
+    <color name="colorPrimaryDark">#4b173b</color>
 </resources>
