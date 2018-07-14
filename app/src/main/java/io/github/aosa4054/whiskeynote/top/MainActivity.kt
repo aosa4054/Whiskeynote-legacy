@@ -22,11 +22,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
 
-    fun toScotch(view: View){
-        val intent = Intent(this, ScotchesActivity::class.java)
-        startActivity(intent)
-    }
-
     fun toJapanese(view: View){
         Toast.makeText(applicationContext, "ジャパ", LENGTH_SHORT).show()
     }
