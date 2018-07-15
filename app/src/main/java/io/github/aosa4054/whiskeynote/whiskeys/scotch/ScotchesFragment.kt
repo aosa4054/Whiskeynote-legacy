@@ -46,7 +46,7 @@ class ScotchesFragment: Fragment(){
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
-                activity!!, view.product_grid, AccelerateDecelerateInterpolator(),
+                activity!!, view.product_grid, view.fab, AccelerateDecelerateInterpolator(),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_menu_white_24dp),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_close_white_24dp)))
 

@@ -16,7 +16,7 @@ import io.github.aosa4054.whiskeynote.R
  * the Y-axis when the navigation icon in the toolbar is pressed.
  */
 class NavigationIconClickListener @JvmOverloads internal constructor(
-        private val context: Context, private val sheet: View, private val interpolator: Interpolator? = null,
+        private val context: Context, private val sheet: View, private val fab: View, private val interpolator: Interpolator? = null,
         private val openIcon: Drawable? = null, private val closeIcon: Drawable? = null) : View.OnClickListener {
 
     private val animatorSet = AnimatorSet()
@@ -47,6 +47,17 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
             animator.interpolator = interpolator
         }
         animatorSet.play(animator)
+
+        //for fab animation
+        val animatorFab = ObjectAnimator.ofFloat(fab, "translationY", (if (backdropShown) translateY else 0).toFloat())
+        animatorFab.duration = 500
+        if (interpolator != null) {
+            animatorFab.interpolator = interpolator
+        }
+        animatorSet.play(animatorFab)
+        animatorFab.start()
+        //
+
         animator.start()
     }
 

@@ -8,9 +8,7 @@
                 android:bottomLeftRadius="0dp"
                 android:topLeftRadius="24dp"
                 />
-            <solid
-                android:color="#ffffff"
-                />
+            <solid android:color="#ffffff" />
         </shape>
     </item>
 </selector>

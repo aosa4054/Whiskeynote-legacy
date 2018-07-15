@@ -1,73 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".whiskeys.scotch.ScotchesFragment">
 
-    <LinearLayout
-        android:background="@color/colorPrimary"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="100dp"
-        android:paddingBottom="100dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!--
-        contents on back layer will be here
-        <include layout="@layout/shr_backdrop" />
-        -->
-
-    </LinearLayout>
-
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:elevation="0dp">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/app_bar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+        <LinearLayout
             android:background="@color/colorPrimary"
-            app:navigationIcon="@drawable/baseline_menu_white_24dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="100dp"
+            android:paddingBottom="100dp">
 
             <!--
-            android:fontFamily="@font/raleway"
-            app:title="@string/app_name"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
+            contents on back layer will be here
+            <include layout="@layout/shr_backdrop" />
             -->
 
-            <TextView
-                android:id="@+id/scotches_toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        </LinearLayout>
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:navigationIcon="@drawable/baseline_menu_white_24dp">
+
+                <!--
                 android:fontFamily="@font/raleway"
-                android:text="@string/app_name"
+                app:title="@string/app_name"
                 android:textColor="#ffffff"
                 android:textSize="24sp"
-                tools:layout_editor_absoluteX="24dp"
-                tools:layout_editor_absoluteY="24dp" />
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+                -->
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/product_grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="56dp"
-        android:elevation="8dp"
-        android:background="@drawable/shape_round_backdrop"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                <TextView
+                    android:id="@+id/scotches_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway"
+                    android:text="@string/scotch"
+                    android:textColor="#ffffff"
+                    android:textSize="24sp"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="24dp" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/product_grid"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dp"
+            android:elevation="8dp"
+            android:background="@drawable/shape_round_backdrop"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    </android.support.v4.widget.NestedScrollView>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
 
-</FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scotch"
+                    android:textSize="16sp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </FrameLayout>
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:tint="@android:color/white"
+        android:backgroundTint="@color/colorSecondary"/>
+
+</android.support.constraint.ConstraintLayout>
+
