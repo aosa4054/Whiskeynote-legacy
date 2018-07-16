@@ -4,6 +4,7 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.ViewModelProviders
 import io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyActivity
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
 import io.github.aosa4054.whiskeynote.data.entity.Scotch

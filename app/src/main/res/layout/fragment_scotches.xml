@@ -25,10 +25,7 @@
             android:paddingTop="100dp"
             android:paddingBottom="100dp">
 
-            <!--
-            contents on back layer will be here
-            <include layout="@layout/shr_backdrop" />
-            -->
+            <include layout="@layout/contents_backlayer" />
 
         </LinearLayout>
 

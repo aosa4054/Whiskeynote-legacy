@@ -36,6 +36,7 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
         }
         */
 
+        /*
         mViewModel = ViewModelProviders.of(this).get(ScotchesViewModel::class.java)
         mViewModel.setNavigators(this, this)
 
@@ -52,6 +53,7 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
         mAdapter = ScotchRecyclerViewAdapter(ArrayList<Scotch>(), this)
         recyclerView.layoutManager = manager
         recyclerView.adapter = mAdapter
+        */
 
     }
 
