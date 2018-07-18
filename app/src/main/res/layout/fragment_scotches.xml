@@ -22,8 +22,8 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingTop="100dp"
-            android:paddingBottom="100dp">
+            android:paddingTop="50dp"
+            android:paddingBottom="50dp">
 
             <include layout="@layout/contents_backlayer" />
 

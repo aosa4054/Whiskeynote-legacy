@@ -55,7 +55,7 @@ class ScotchesFragment: Fragment(){
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_menu_white_24dp),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_close_white_24dp)))
 
-        setupExpandedListView(view)
+        //setupExpandedListView(view)
         //TODO: disable clickable of parent group and change it to checkbox
         //TODO: make expandablelistview not able to collapse list
         //TODO: change its font to raleway
@@ -72,6 +72,8 @@ class ScotchesFragment: Fragment(){
         mViewModel = viewModel
     }
 
+    //<editor-fold desc="setupExpandableListView">
+    /*
     private fun setupExpandedListView(v: View){
         val parentTitle: MutableList<String> = mutableListOf("Scotch")
         val children: MutableList<String> = mutableListOf("Brended", "Single", "Uncategolised")
@@ -122,5 +124,7 @@ class ScotchesFragment: Fragment(){
 
         elv.setAdapter(adapter)
     }
+    */
+    //</editor-fold>
 
 }
