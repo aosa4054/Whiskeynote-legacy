@@ -12,3 +12,8 @@ an android app that makes it easy to note about your impressions on whiskeys, is
   
 ## UIについて
 Sketchで作成した画面のイメージは以下です。
+
+<img src="https://github.com/aosa4054/Whiskeynote/blob/master/img/top.png" width="200">          <img src="https://github.com/aosa4054/Whiskeynote/blob/master/img/list.png" width="200">          <img src="https://github.com/aosa4054/Whiskeynote/blob/master/img/detail.png" width="200">
+  
+左から、トップ画面、ウイスキーを表示するリストの画面、それぞれのウイスキーの詳細の画面です。  
+リストの画面ではBackDropを使用して検索が可能 (になる予定)です。  
