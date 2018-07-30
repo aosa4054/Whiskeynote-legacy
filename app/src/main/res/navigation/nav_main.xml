@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/whiskeyDetailFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -22,5 +22,13 @@
         android:id="@+id/scotchesFragment"
         android:name="io.github.aosa4054.whiskeynote.whiskeys.scotch.ScotchesFragment"
         android:label="fragment_scotches"
-        tools:layout="@layout/fragment_scotches" />
+        tools:layout="@layout/fragment_scotches" >
+        <action
+            android:id="@+id/action_scotchesFragment_to_whiskeyDetailFragment"
+            app:destination="@id/whiskeyDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/whiskeyDetailFragment"
+        android:name="io.github.aosa4054.whiskeynote.detail.WhiskeyDetailFragment"
+        tools:layout="@layout/fragment_whiskey_detail"></fragment>
 </navigation>

@@ -12,10 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.ExpandableListAdapter
-import android.widget.ExpandableListView
-import android.widget.SimpleExpandableListAdapter
-import android.widget.TextView
+import android.widget.*
 import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding
 import kotlinx.android.synthetic.main.activity_scotches.*
@@ -50,10 +47,17 @@ class ScotchesFragment: Fragment(){
         // Set up the tool bar
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+
+        /*TODO: remove this comment out and activate following NavigationOnClickListener
         view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
                 activity!!, view.product_grid, view.fab, AccelerateDecelerateInterpolator(),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_menu_white_24dp),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_close_white_24dp)))
+        */
+
+        //TODO: remove following NavigationOnClickListener
+        view.app_bar.setNavigationOnClickListener { Toast.makeText(context, "この機能は現在のbeta版では実装されていません", Toast.LENGTH_LONG).show() }
+
 
         //setupExpandedListView(view)
         //TODO: disable clickable of parent group and change it to checkbox

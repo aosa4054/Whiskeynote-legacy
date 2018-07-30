@@ -1,11 +1,9 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.arch.lifecycle.ViewModelProviders
 import android.content.DialogInterface
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import io.github.aosa4054.whiskeynote.R
 
@@ -20,7 +18,7 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_addeditwhiskey)
+        setContentView(R.layout.activity_add_edit_whiskey)
 
         mViewModel = ViewModelProviders.of(this).get(AddEditWiskeyViewModel::class.java)
         mViewModel.onActivityCreated(this, typeFrag)

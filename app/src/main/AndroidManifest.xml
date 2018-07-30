@@ -30,6 +30,9 @@
             android:screenOrientation="portrait" />
         <activity android:name=".addeditwhiskey.AddEditWhiskeyActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".detail.WhiskeyDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <meta-data
             android:name="preloaded_fonts"
