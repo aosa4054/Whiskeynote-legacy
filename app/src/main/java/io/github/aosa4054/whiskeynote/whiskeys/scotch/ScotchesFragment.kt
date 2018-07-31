@@ -3,11 +3,11 @@ package io.github.aosa4054.whiskeynote.whiskeys.scotch
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +18,7 @@ import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding
 import kotlinx.android.synthetic.main.activity_scotches.*
 import kotlinx.android.synthetic.main.fragment_scotches.view.*
 
-class ScotchesFragment: Fragment(){
+class ScotchesFragment: androidx.fragment.app.Fragment(){
     private lateinit var mViewModel: ScotchesViewModel
     private lateinit var mListItemBinding: ScotchesListItemBinding
     private lateinit var mhRecyclerViewAdapter: ScotchRecyclerViewAdapter

@@ -1,8 +1,8 @@
 package io.github.aosa4054.whiskeynote.data
 
 import android.app.Application
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import android.os.AsyncTask
 import io.github.aosa4054.whiskeynote.data.dao.ScotchDao
 import io.github.aosa4054.whiskeynote.data.entity.Scotch

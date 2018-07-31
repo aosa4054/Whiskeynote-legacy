@@ -2,4 +2,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="backdrop_height">200dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="aew_list_margin">24dp</dimen>
 </resources>

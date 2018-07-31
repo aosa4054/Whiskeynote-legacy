@@ -1,12 +1,12 @@
 package io.github.aosa4054.whiskeynote.whiskeys.scotch
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyActivity
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_scotches.*
 class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavigator{
 
     lateinit var mViewModel: ScotchesViewModel
-    lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
     lateinit var mAdapter: ScotchRecyclerViewAdapter
     lateinit var binding: ScotchesListItemBinding
 

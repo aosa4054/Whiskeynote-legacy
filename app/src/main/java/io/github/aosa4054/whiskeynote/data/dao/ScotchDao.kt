@@ -1,8 +1,8 @@
 package io.github.aosa4054.whiskeynote.data.dao
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.persistence.room.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.room.*
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
 @Dao interface ScotchDao {

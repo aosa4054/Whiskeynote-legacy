@@ -1,10 +1,10 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
 import android.app.AlertDialog
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import io.github.aosa4054.whiskeynote.R
 
 class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{

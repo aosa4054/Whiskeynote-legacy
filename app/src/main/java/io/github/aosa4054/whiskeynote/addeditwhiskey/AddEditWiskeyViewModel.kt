@@ -2,8 +2,8 @@ package io.github.aosa4054.whiskeynote.addeditwhiskey
 
 import android.app.AlertDialog
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import android.content.Intent
 import android.content.Intent.getIntent
 import android.widget.Toast
