@@ -23,27 +23,6 @@
         tools:ignore="MissingConstraints" />
     -->
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/topToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="0dp"
-        tools:ignore="MissingConstraints" >
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/raleway"
-            android:text="@string/app_name"
-            android:textColor="#ffffff"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="24dp"
-            tools:layout_editor_absoluteY="24dp" />
-
-        </androidx.appcompat.widget.Toolbar>
-
     <fragment
         android:id="@+id/fragment_main"
         android:layout_height="match_parent"

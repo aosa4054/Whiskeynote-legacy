@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/addEditWhiskeyFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
@@ -37,5 +37,10 @@
     <fragment
         android:id="@+id/addEditWhiskeyFragment"
         android:name="io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyFragment"
-        tools:layout="@layout/fragment_add_edit_whiskey"/>
+        tools:layout="@layout/fragment_add_edit_whiskey">
+        <argument
+            android:name="flag"
+            android:defaultValue="0"
+            app:type="integer"/>
+    </fragment>
 </navigation>

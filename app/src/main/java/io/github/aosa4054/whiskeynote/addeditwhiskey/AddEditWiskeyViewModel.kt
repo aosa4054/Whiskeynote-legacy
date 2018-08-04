@@ -6,60 +6,36 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import android.content.Intent
 import android.content.Intent.getIntent
+import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.ViewModel
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
-class AddEditWiskeyViewModel(application: Application, private val mScotchRepository: ScotchRepository,
-                             var typeFrag: Int): AndroidViewModel(application) {
 
-    /*LiveDataいらんくね
-    private val mAllScotches: MutableLiveData<List<Scotch>> = mScotchRepository.getAllScotches()
-    lateinit var name: MutableLiveData<String>
-    lateinit var imgTag: MutableLiveData<String>
-    lateinit var price: MutableLiveData<Int>
-    lateinit var ml: MutableLiveData<Int>
-    lateinit var fragnance: MutableLiveData<String?>
-    lateinit var taste: MutableLiveData<String?>
-    lateinit var afterTaste: MutableLiveData<String?>
-    lateinit var memo: MutableLiveData<String?>
 
-    init {
-        if (mAllScotches.value != null) {
-            mAllScotches.value!!.forEach {
-                name.postValue(it.name)
-                imgTag.postValue(it.type)
-                price.postValue(it.price)
-                ml.postValue(it.ml)
-                fragnance.postValue(it.fragrance)
-                taste.postValue(it.taste)
-                afterTaste.postValue(it.aftertaste)
-                memo.postValue(it.memo)
-            }
-        }
-    }
-    */
+class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(application){
 
+    private var mScotchRepository: ScotchRepository = ScotchRepository(application)
     private var mAddEditWhiskeyNavigator: AddEditWhiskeyNavigator? = null
+    private var typeflag: Int = 0
 
-    //private var mIsNewWhiskey: Boolean = false
-
-    //frag: 1->Scotch, 2->American, 3->Japanese, 4->Others
     fun saveWhiskey(){
-        when (typeFrag){
+        when (typeflag){
             1 -> saveScotch()
             2 -> saveAmerican()
             3 -> saveJapanese()
             4 -> saveOthers()
             else -> mAddEditWhiskeyNavigator?.chooseWhiskeyType()
-                    ?: Toast.makeText(getApplication(), "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
+                    ?: mAddEditWhiskeyNavigator?.toastError()
         }
     }
 
-    fun onActivityCreated(navigator: AddEditWhiskeyNavigator, typeflag: Int){
+    fun onActivityCreated(navigator: AddEditWhiskeyNavigator){
         mAddEditWhiskeyNavigator = navigator
-        typeFrag = typeflag
     }
+
+    fun setTypeFlag(type: Int){typeflag = type}
 
     //saveWhiskeyでうまく保存できず、Dialog経由で保存する場合のメソッド
     fun saveWhiskeyViaDialog(flag: Int){
@@ -68,24 +44,26 @@ class AddEditWiskeyViewModel(application: Application, private val mScotchReposi
             2 -> saveAmerican()
             3 -> saveJapanese()
             4 -> saveOthers()
-            else -> Toast.makeText(getApplication(), "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
+            else -> mAddEditWhiskeyNavigator?.toastError()
         }
     }
 
-    fun saveScotch(){
-        //val newScotch: Scotch = Scotch(/*viewからgetしまくり*/)
-        //mScotchRepository.insert(newScotch)
+    private fun saveScotch(){
+        val newScotch = mAddEditWhiskeyNavigator?.getViewData()
+        if (newScotch != null) {
+            mScotchRepository.insert(newScotch)
+        }else {
+            mAddEditWhiskeyNavigator?.toastError()
+        }
     }
 
-    fun saveAmerican(){}
+    private fun saveAmerican(){}
 
-    fun saveJapanese(){}
+    private fun saveJapanese(){}
 
-    fun saveOthers(){}
+    private fun saveOthers(){}
 
     fun onActivityDestroyed(){
         mAddEditWhiskeyNavigator = null
     }
-
-    //fun isNewWhiskey(): Boolean{return mIsNewWhiskey}
 }

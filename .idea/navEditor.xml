@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="588" />
-                            <option name="y" value="-78" />
+                            <option name="x" value="515" />
+                            <option name="y" value="359" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -25,8 +25,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="8" />
-                            <option name="y" value="11" />
+                            <option name="x" value="12" />
+                            <option name="y" value="54" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -47,11 +47,21 @@
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="265" />
-                            <option name="y" value="12" />
+                            <option name="y" value="54" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_scotchesFragment_to_addEditWhiskeyActivity">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_scotchesFragment_to_addEditWhiskeyFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_scotchesFragment_to_whiskeyDetailFragment">
                               <value>
                                 <LayoutPositions />
@@ -67,8 +77,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="582" />
-                            <option name="y" value="290" />
+                            <option name="x" value="518" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -13,9 +13,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.*
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding
 import kotlinx.android.synthetic.main.activity_scotches.*
+import kotlinx.android.synthetic.main.fragment_scotches.*
 import kotlinx.android.synthetic.main.fragment_scotches.view.*
 
 class ScotchesFragment: androidx.fragment.app.Fragment(){
@@ -43,6 +48,20 @@ class ScotchesFragment: androidx.fragment.app.Fragment(){
          */
         
         val view = inflater.inflate(R.layout.fragment_scotches, container, false)
+        val fab: FloatingActionButton = view.findViewById(R.id.fab)
+        fab.setOnClickListener {
+            it.findNavController().navigate(
+                    ScotchesFragmentDirections.action_scotchesFragment_to_addEditWhiskeyFragment().
+                            apply { setFlag(1) }
+            )
+            /*
+            val bundle = bundleOf("flag" to 1)
+            Navigation.findNavController(it).navigate(
+                    R.id.action_scotchesFragment_to_addEditWhiskeyFragment,
+                    bundle)
+                    */
+            //Navigation.createNavigateOnClickListener(R.id.action_scotchesFragment_to_addEditWhiskeyFragment)
+        }
 
         // Set up the tool bar
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)

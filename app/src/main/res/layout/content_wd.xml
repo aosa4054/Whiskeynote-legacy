@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".detail.WhiskeyDetailFragment"
-    tools:showIn="@layout/fragment_whiskey_detail"
-    android:background="#fffafafa">
+    tools:showIn="@layout/fragment_whiskey_detail">
 
     <TextView
         android:layout_width="match_parent"

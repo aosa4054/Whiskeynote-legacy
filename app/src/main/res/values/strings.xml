@@ -10,7 +10,18 @@
     <string name="aew_price">Price</string>
     <string name="per">/</string>
     <string name="aew_ml">ml</string>
-    <string name="aew_fragnance">Fragnance</string>
+    <string name="aew_fragrance">Fragrance</string>
     <string name="aew_taste">Taste</string>
     <string name="aew_aftertaste">Aftertaste</string>
+
+    <string name="huga">huga</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+    <string name="aew_memo">Memo</string>
+    <string-array name="hoge">
+        <item>h</item>
+        <item>ho</item>
+        <item>hog</item>
+        <item>hoge</item>
+    </string-array>
 </resources>

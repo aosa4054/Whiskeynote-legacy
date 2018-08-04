@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.github.aosa4054.whiskeynote.R
@@ -69,9 +70,10 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
 
 
     override fun addNewScotch() {
-        val intent: Intent = Intent(this, AddEditWhiskeyActivity::class.java)
-        intent.putExtra("TYPE_FRAG", 1)
-        startActivityForResult(intent, AddEditWhiskeyActivity.REQUEST_CODE)
+        //val intent: Intent = Intent(this, AddEditWhiskeyActivity::class.java)
+        //intent.putExtra("TYPE_FRAG", 1)
+        //startActivityForResult(intent, AddEditWhiskeyActivity.REQUEST_CODE)
+        //Navigation.createNavigateOnClickListener(R.id.action_scotchesFragment_to_addEditWhiskeyFragment)
     }
 
     override fun openScotchDetails(whiskeyId: String) {
