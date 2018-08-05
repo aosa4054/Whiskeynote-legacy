@@ -1,17 +1,10 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
-import android.app.AlertDialog
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import android.content.Intent
-import android.content.Intent.getIntent
 import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
-
+import kotlin.math.log
 
 
 class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(application){
@@ -19,6 +12,7 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
     private var mScotchRepository: ScotchRepository = ScotchRepository(application)
     private var mAddEditWhiskeyNavigator: AddEditWhiskeyNavigator? = null
     private var typeflag: Int = 0
+
 
     fun saveWhiskey(){
         when (typeflag){
@@ -31,7 +25,8 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    fun onActivityCreated(navigator: AddEditWhiskeyNavigator){
+    //former onActivityCreated
+    fun setupNavigator(navigator: AddEditWhiskeyNavigator){
         mAddEditWhiskeyNavigator = navigator
     }
 
@@ -50,11 +45,13 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
 
     private fun saveScotch(){
         val newScotch = mAddEditWhiskeyNavigator?.getViewData()
+
         if (newScotch != null) {
             mScotchRepository.insert(newScotch)
         }else {
             mAddEditWhiskeyNavigator?.toastError()
         }
+
     }
 
     private fun saveAmerican(){}
@@ -63,7 +60,7 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
 
     private fun saveOthers(){}
 
-    fun onActivityDestroyed(){
+    fun deleteNavigator(){
         mAddEditWhiskeyNavigator = null
     }
 }

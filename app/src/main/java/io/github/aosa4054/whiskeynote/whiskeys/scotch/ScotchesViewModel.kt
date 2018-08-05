@@ -9,11 +9,12 @@ import io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyActivity
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 
-open class ScotchesViewModel(application: Application, private val mScotchRepository: ScotchRepository):
+open class ScotchesViewModel(application: Application):
         AndroidViewModel(application){
 
+    private var mScotchRepository: ScotchRepository = ScotchRepository(application)
     private var mAllScotches: LiveData<List<Scotch>> = mScotchRepository.getAllScotches()
-    lateinit var imgTag: MutableLiveData<String>
+    lateinit var type: MutableLiveData<String>
     lateinit var name: MutableLiveData<String>
     private var mScotchesNavigator: ScotchesNavigator? = null
     private var mScotchItemNavigator: ScotchItemNavigator? = null
@@ -22,7 +23,7 @@ open class ScotchesViewModel(application: Application, private val mScotchReposi
         if (mAllScotches.value != null) {
             mAllScotches.value!!.forEach {
                 name.postValue(it.name)
-                imgTag.postValue(it.type)
+                type.postValue(it.type)
             }
         }
     }

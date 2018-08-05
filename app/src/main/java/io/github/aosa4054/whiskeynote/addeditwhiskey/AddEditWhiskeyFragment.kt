@@ -1,18 +1,14 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
 import android.os.Bundle
-import android.text.InputType.TYPE_CLASS_NUMBER
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.textfield.TextInputLayout
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
-import java.util.*
 
 class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(){
 
@@ -40,6 +36,8 @@ class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(){
     private fun setupViewModel(){
         mViewModel = ViewModelProviders.of(this).get(AddEditWhiskeyViewModel::class.java)
         mViewModel!!.setTypeFlag(typeFlag)
+        val act = AddEditWhiskeyActivity()
+        mViewModel!!.setupNavigator(act)
     }
 
 }

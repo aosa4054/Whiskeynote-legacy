@@ -6,23 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--
-    tools:context=".top.MainActivity"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    tools:layout_editor_absoluteX="8dp"
-    tools:layout_editor_absoluteY="8dp"
-    -->
-
-    <!--
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/container"
-        tools:ignore="MissingConstraints" />
-    -->
-
     <fragment
         android:id="@+id/fragment_main"
         android:layout_height="match_parent"

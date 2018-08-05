@@ -1,15 +1,14 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
 import android.app.AlertDialog
-import androidx.lifecycle.ViewModelProviders
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
-import io.github.aosa4054.whiskeynote.whiskeys.scotch.ScotchesFragment
 import java.util.*
 
 class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
@@ -19,15 +18,7 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mViewModel = AddEditWhiskeyViewModel(application)
-        mViewModel.onActivityCreated(this)
         setContentView(R.layout.activity_add_edit_whiskey)
-    }
-
-
-    override fun onDestroy() {
-        mViewModel.onActivityDestroyed()
-        super.onDestroy()
     }
 
 
@@ -48,6 +39,7 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
     }
 
     override fun getViewData(): Scotch {
+        Log.d("yeah", "いけるね")
         val r = Random()
         val id = r.nextInt()
         val name = findViewById<TextInputLayout>(R.id.text_input_name).editText.toString()

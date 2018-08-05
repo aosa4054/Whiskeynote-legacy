@@ -1,16 +1,12 @@
 package io.github.aosa4054.whiskeynote.top
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.FragmentTransaction
 import androidx.appcompat.widget.Toolbar
 import android.view.View
-import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.whiskeys.scotch.ScotchesActivity
 
 class MainActivity : AppCompatActivity() {
 

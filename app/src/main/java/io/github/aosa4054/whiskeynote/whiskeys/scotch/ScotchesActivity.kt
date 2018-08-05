@@ -1,6 +1,5 @@
 package io.github.aosa4054.whiskeynote.whiskeys.scotch
 
-import androidx.lifecycle.ViewModelProviders
 import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import android.os.Bundle
