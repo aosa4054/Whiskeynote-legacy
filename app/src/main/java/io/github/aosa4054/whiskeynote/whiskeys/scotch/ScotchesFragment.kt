@@ -67,15 +67,15 @@ class ScotchesFragment: androidx.fragment.app.Fragment(){
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        /*TODO: remove this comment out and activate following NavigationOnClickListener
+        //TODO: remove this comment out and activate following NavigationOnClickListener
         view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
                 activity!!, view.product_grid, view.fab, AccelerateDecelerateInterpolator(),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_menu_white_24dp),
                 ContextCompat.getDrawable(context!!, R.drawable.baseline_close_white_24dp)))
-        */
+
 
         //TODO: remove following NavigationOnClickListener
-        view.app_bar.setNavigationOnClickListener { Toast.makeText(context, "この機能は現在のbeta版では実装されていません", Toast.LENGTH_LONG).show() }
+        //view.app_bar.setNavigationOnClickListener { Toast.makeText(context, "この機能は現在のbeta版では実装されていません", Toast.LENGTH_LONG).show() }
 
 
         //setupExpandedListView(view)

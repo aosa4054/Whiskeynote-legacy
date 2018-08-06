@@ -3,6 +3,7 @@ package io.github.aosa4054.whiskeynote.addeditwhiskey
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.navigation.Navigation
 import io.github.aosa4054.whiskeynote.data.ScotchRepository
 import kotlin.math.log
 
@@ -20,8 +21,6 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
             2 -> saveAmerican()
             3 -> saveJapanese()
             4 -> saveOthers()
-            else -> mAddEditWhiskeyNavigator?.chooseWhiskeyType()
-                    ?: mAddEditWhiskeyNavigator?.toastError()
         }
     }
 
@@ -39,7 +38,6 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
             2 -> saveAmerican()
             3 -> saveJapanese()
             4 -> saveOthers()
-            else -> mAddEditWhiskeyNavigator?.toastError()
         }
     }
 
@@ -49,8 +47,11 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
         if (newScotch != null) {
             mScotchRepository.insert(newScotch)
         }else {
-            mAddEditWhiskeyNavigator?.toastError()
+            //mAddEditWhiskeyNavigator?.toastError()
+            Log.d("nullScotch", "newScotchがnull")
         }
+
+        mAddEditWhiskeyNavigator!!.backToList()
 
     }
 

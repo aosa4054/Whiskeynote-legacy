@@ -25,15 +25,23 @@
         tools:layout="@layout/fragment_scotches" >
         <action
             android:id="@+id/action_scotchesFragment_to_whiskeyDetailFragment"
-            app:destination="@id/whiskeyDetailFragment" />
+            app:destination="@id/whiskeyDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_scotchesFragment_to_addEditWhiskeyFragment"
-            app:destination="@id/addEditWhiskeyFragment" />
+            app:destination="@id/addEditWhiskeyFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/whiskeyDetailFragment"
         android:name="io.github.aosa4054.whiskeynote.detail.WhiskeyDetailFragment"
-        tools:layout="@layout/fragment_whiskey_detail"></fragment>
+        tools:layout="@layout/fragment_whiskey_detail"/>
     <fragment
         android:id="@+id/addEditWhiskeyFragment"
         android:name="io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyFragment"
@@ -42,5 +50,12 @@
             android:name="flag"
             android:defaultValue="0"
             app:type="integer"/>
+        <action
+            android:id="@+id/action_addEditWhiskeyFragment_to_scotchesFragment"
+            app:destination="@id/scotchesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

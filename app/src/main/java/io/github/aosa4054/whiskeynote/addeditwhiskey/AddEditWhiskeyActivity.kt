@@ -11,7 +11,7 @@ import io.github.aosa4054.whiskeynote.R
 import io.github.aosa4054.whiskeynote.data.entity.Scotch
 import java.util.*
 
-class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
+class AddEditWhiskeyActivity: AppCompatActivity(){
 
     lateinit var mViewModel: AddEditWhiskeyViewModel
 
@@ -22,6 +22,7 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
     }
 
 
+    /*
     //Navigatorからウイスキーのflagを入力してもらうダイアログを生成、ViewModelに渡して保存してもらう
     override fun chooseWhiskeyType(){
         var selected: Int = 0
@@ -38,6 +39,8 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
         Toast.makeText(application, "申し訳ございません、エラーが発生しました。もう一度お試しください", Toast.LENGTH_SHORT).show()
     }
 
+
+
     override fun getViewData(): Scotch {
         Log.d("yeah", "いけるね")
         val r = Random()
@@ -51,9 +54,10 @@ class AddEditWhiskeyActivity: AppCompatActivity(), AddEditWhiskeyNavigator{
         val aftertaste = findViewById<TextInputLayout>(R.id.text_input_aftertaste).editText.toString()
         val memo = findViewById<TextInputLayout>(R.id.text_input_memo).editText.toString()
 
+        Log.d("Result", "$name, $kind, $fragrance, $taste, $aftertaste, $memo")
         val scotch = Scotch(id, name, kind, price, ml, fragrance, taste, aftertaste, memo)
 
         return scotch
     }
-
+    */
 }

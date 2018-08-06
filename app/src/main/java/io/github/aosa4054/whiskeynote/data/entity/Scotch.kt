@@ -9,5 +9,5 @@ import androidx.annotation.NonNull
 data class Scotch(@PrimaryKey(autoGenerate = true)
                   @ColumnInfo(name = "entryid")
                   var id: Int, var name: String, var type: String,
-                  var price: Int, var ml: Int, var fragrance: String?,
+                  var price: String, var ml: String, var fragrance: String?,
                   var taste: String?, var aftertaste: String?, var memo: String?)
