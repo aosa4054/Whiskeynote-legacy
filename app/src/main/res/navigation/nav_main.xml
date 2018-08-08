@@ -36,7 +36,8 @@
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/scotchesFragment" />
     </fragment>
     <fragment
         android:id="@+id/whiskeyDetailFragment"
@@ -50,12 +51,5 @@
             android:name="flag"
             android:defaultValue="0"
             app:type="integer"/>
-        <action
-            android:id="@+id/action_addEditWhiskeyFragment_to_scotchesFragment"
-            app:destination="@id/scotchesFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 </navigation>

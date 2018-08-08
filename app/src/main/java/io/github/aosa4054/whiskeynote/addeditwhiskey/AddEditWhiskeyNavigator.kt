@@ -6,5 +6,5 @@ interface AddEditWhiskeyNavigator{
     fun chooseWhiskeyType()
     //fun toastError()
     fun getViewData(): Scotch
-    fun backToList()
+    fun backToList(): Boolean
 }

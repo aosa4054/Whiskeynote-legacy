@@ -51,7 +51,9 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
             Log.d("nullScotch", "newScotchがnull")
         }
 
+
         mAddEditWhiskeyNavigator!!.backToList()
+
 
     }
 

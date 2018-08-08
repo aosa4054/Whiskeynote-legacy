@@ -41,7 +41,6 @@ class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(), AddEditWhiskey
     private fun setupSaveButton(){
         activity?.findViewById<AppCompatButton>(R.id.btn_save)?.setOnClickListener{mViewModel!!.saveWhiskey()}
     }
-
     private fun setupCancelButton(){
         activity?.findViewById<AppCompatButton>(R.id.btn_cancel)?.setOnClickListener { backToList() }
     }
@@ -85,6 +84,6 @@ class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(), AddEditWhiskey
                 .show()
     }
 
-    override fun backToList() = Navigation.findNavController(mView).navigate(R.id.action_addEditWhiskeyFragment_to_scotchesFragment)
+    override fun backToList() = Navigation.findNavController(mView).popBackStack()
 
 }
