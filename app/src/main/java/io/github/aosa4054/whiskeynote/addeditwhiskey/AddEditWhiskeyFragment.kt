@@ -1,21 +1,18 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
 import android.app.AlertDialog
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import com.google.android.material.textfield.TextInputLayout
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
+import io.github.aosa4054.whiskeynote.data.entity.Whiskey
 import java.util.*
 
 class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(), AddEditWhiskeyNavigator{
@@ -53,12 +50,12 @@ class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(), AddEditWhiskey
     }
 
     //こっからためし
-    override fun getViewData(): Scotch {
+    override fun getViewData(): Whiskey {
         Log.d("yeah", "いけるね")
         val r = Random()
         val id = r.nextInt()
         val name = mView.findViewById<TextInputLayout>(R.id.text_input_name).editText!!.text.toString()
-        val kind = mView.findViewById<TextInputLayout>(R.id.text_input_kind).editText!!.text.toString()
+        val type = mView.findViewById<TextInputLayout>(R.id.text_input_kind).editText!!.text.toString()
         val price = mView.findViewById<TextInputLayout>(R.id.text_input_price).editText!!.text.toString()
         val ml = mView.findViewById<TextInputLayout>(R.id.text_input_ml).editText!!.text.toString()
         val fragrance = mView.findViewById<TextInputLayout>(R.id.text_input_fragrance).editText!!.text.toString()
@@ -66,10 +63,12 @@ class AddEditWhiskeyFragment(): androidx.fragment.app.Fragment(), AddEditWhiskey
         val aftertaste = mView.findViewById<TextInputLayout>(R.id.text_input_aftertaste).editText!!.text.toString()
         val memo = mView.findViewById<TextInputLayout>(R.id.text_input_memo).editText!!.text.toString()
 
-        Log.d("Result", "$name, $kind, $fragrance, $taste, $aftertaste, $memo")
-        val scotch = Scotch(id, name, kind, price, ml, fragrance, taste, aftertaste, memo)
+        Log.d("Result", "$name, $type, $fragrance, $taste, $aftertaste, $memo")
+        val whiskey = Whiskey(id, "Others", name, type, price, ml, fragrance, taste, aftertaste, memo)
 
-        return scotch
+        //TODO whenでflagに応じてkindを設定
+
+        return whiskey
     }
 
     //Navigatorからウイスキーのflagを入力してもらうダイアログを生成、ViewModelに渡して保存してもらう

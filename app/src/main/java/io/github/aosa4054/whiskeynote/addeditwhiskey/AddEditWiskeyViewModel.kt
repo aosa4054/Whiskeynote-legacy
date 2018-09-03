@@ -3,14 +3,13 @@ package io.github.aosa4054.whiskeynote.addeditwhiskey
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.navigation.Navigation
-import io.github.aosa4054.whiskeynote.data.ScotchRepository
+import io.github.aosa4054.whiskeynote.data.WhiskeyRepository
 import kotlin.math.log
 
 
 class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(application){
 
-    private var mScotchRepository: ScotchRepository = ScotchRepository(application)
+    private var mScotchRepository = WhiskeyRepository(application)
     private var mAddEditWhiskeyNavigator: AddEditWhiskeyNavigator? = null
     private var typeflag: Int = 0
 
