@@ -11,10 +11,6 @@ import android.view.animation.Interpolator
 import android.widget.ImageView
 import io.github.aosa4054.whiskeynote.R
 
-/**
- * [android.view.View.OnClickListener] used to translate the product grid sheet downward on
- * the Y-axis when the navigation icon in the toolbar is pressed.
- */
 class NavigationIconClickListener @JvmOverloads internal constructor(
         private val context: Context, private val sheet: View, private val fab: View, private val interpolator: Interpolator? = null,
         private val openIcon: Drawable? = null, private val closeIcon: Drawable? = null) : View.OnClickListener {
@@ -32,7 +28,6 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
     override fun onClick(view: View) {
         backdropShown = !backdropShown
 
-        // Cancel the existing animations
         animatorSet.removeAllListeners()
         animatorSet.end()
         animatorSet.cancel()
@@ -56,7 +51,6 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         }
         animatorSet.play(animatorFab)
         animatorFab.start()
-        //
 
         animator.start()
     }

@@ -33,8 +33,6 @@ class ScotchRepository(application: Application){
         }
     }
 
-    //
-    //<editor-fold desc="wrapper methods of ScotchDao">
      fun getScotchById(scotchId: String): Scotch{
          return mScotchDao.getSctchById(scotchId)
      }
@@ -54,8 +52,6 @@ class ScotchRepository(application: Application){
     fun insert(scotch: Scotch){
         insertAsyncTask(mScotchDao).execute(scotch)
     }
-    //</editor-fold>
-    //
 
     //AsyncTask class for inserting new item
     private  class insertAsyncTask internal constructor

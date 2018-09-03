@@ -9,9 +9,6 @@ import io.github.aosa4054.whiskeynote.data.entity.Scotch
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     fun insert(scotch: Scotch)
 
-    //@Update
-    //abstract fun update(scotch: Scotch)
-
     @Query("SELECT * from scotch_table")
     fun getAllScotches(): LiveData<List<Scotch>>
 
