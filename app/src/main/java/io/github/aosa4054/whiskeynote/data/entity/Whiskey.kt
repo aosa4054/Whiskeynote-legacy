@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 @Entity (tableName = "whiskey_table")
 data class Whiskey(@PrimaryKey(autoGenerate = true)
                   @ColumnInfo(name = "entryid")
-                  var id: String, var kind: String, var name: String, var type: String,
+                  var id: Int, var kind: String, var name: String, var type: String,
                   var price: String, var ml: String, var fragrance: String?,
                   var taste: String?, var aftertaste: String?, var memo: String?)
