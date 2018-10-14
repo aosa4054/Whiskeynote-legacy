@@ -1,5 +1,6 @@
 package io.github.aosa4054.whiskeynote.whiskeys.scotch
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Build
 import android.os.Bundle
@@ -18,14 +19,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding
+import io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyActivity
 import kotlinx.android.synthetic.main.activity_scotches.*
 import kotlinx.android.synthetic.main.fragment_scotches.*
 import kotlinx.android.synthetic.main.fragment_scotches.view.*
 
 class ScotchesFragment: androidx.fragment.app.Fragment(){
     private lateinit var mViewModel: ScotchesViewModel
-    private lateinit var mListItemBinding: ScotchesListItemBinding
+    //private lateinit var mListItemBinding: ScotchesListItemBinding
     private lateinit var mhRecyclerViewAdapter: ScotchRecyclerViewAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -34,10 +35,9 @@ class ScotchesFragment: androidx.fragment.app.Fragment(){
         val view = inflater.inflate(R.layout.fragment_scotches, container, false)
         val fab: FloatingActionButton = view.findViewById(R.id.fab)
         fab.setOnClickListener {
-            it.findNavController().navigate(
-                    ScotchesFragmentDirections.action_scotchesFragment_to_addEditWhiskeyFragment().
-                            apply { setFlag(1) }
-            )
+            val intent = Intent(activity, AddEditWhiskeyActivity::class.java)
+            intent.putExtra("Type Flag", 1)
+            startActivity(intent)
         }
 
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)

@@ -9,11 +9,9 @@
 
     <fragment
         android:id="@+id/add_edit_whiskey_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:name="io.github.aosa4054.whiskeynote.addeditwhiskey.AddEditWhiskeyFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_main"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,11 +49,7 @@ class AddEditWhiskeyViewModel(application: Application): AndroidViewModel(applic
             //mAddEditWhiskeyNavigator?.toastError()
             Log.d("nullScotch", "newScotchがnull")
         }
-
-
         mAddEditWhiskeyNavigator!!.backToList()
-
-
     }
 
     private fun saveAmerican(){}

@@ -90,4 +90,7 @@ dependencies {
     implementation 'android.arch.navigation:navigation-ui-ktx:' + rootProject.navigation_architecture_component_version
     //material components
     implementation 'com.google.android.material:material:1.0.0-rc02'
+    //PermissionsDispatcher
+    implementation 'com.github.hotchemi:permissionsdispatcher:3.3.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.3.1'
 }
