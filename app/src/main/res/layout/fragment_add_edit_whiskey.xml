@@ -52,15 +52,23 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/aew_iv"
+                android:id="@+id/aew_image"
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:layout_height="@dimen/app_bar_height" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/aew_image_button"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar_height"
-                android:background="@color/colorSecondary" />
+                android:elevation="0dp"
+                android:background="#AAAAAA"
+                android:src="@android:drawable/ic_menu_add" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/aew_iv"
+                android:layout_below="@id/aew_image_button"
                 android:orientation="vertical"
                 android:paddingStart="24dp"
                 android:paddingTop="@dimen/aew_list_margin"
@@ -103,7 +111,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/text_input_price"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="150dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/aew_list_margin"
                         android:hint="@string/aew_price"
@@ -118,7 +126,7 @@
 
                     <TextView
                         android:layout_marginTop="12dp"
-                        android:layout_width="35dp"
+                        android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical|center_horizontal"
                         android:text="@string/per"
@@ -127,7 +135,7 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/text_input_ml"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="150dp"
+                        android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/aew_list_margin"
                         android:gravity="end"
@@ -143,13 +151,23 @@
 
                 </LinearLayout>
 
+                <!--
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/aew_list_margin"
+                    android:text="ウイスキーの香りを選択してください"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/tertiary_text_light"/>
+                -->
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/text_input_fragrance"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/aew_list_margin"
-                    android:hint="@string/aew_fragrance"
+                    android:hint="@string/aew_taste"
                     app:helperText="ウイスキーの香りを入力してください">
 
                     <com.google.android.material.textfield.TextInputEditText

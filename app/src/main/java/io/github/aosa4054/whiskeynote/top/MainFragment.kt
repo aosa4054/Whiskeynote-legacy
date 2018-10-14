@@ -1,5 +1,6 @@
 package io.github.aosa4054.whiskeynote.top
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 
 import io.github.aosa4054.whiskeynote.R
+import io.github.aosa4054.whiskeynote.whiskeys.scotch.ScotchesActivity
 
 class MainFragment: androidx.fragment.app.Fragment() {
 
@@ -24,7 +26,7 @@ class MainFragment: androidx.fragment.app.Fragment() {
         listView.onItemClickListener =
                 AdapterView.OnItemClickListener {parent, v, pos, id ->
                     when(pos){
-                        0 -> view.let { Navigation.findNavController(it).navigate(R.id.toScotch) }
+                        0 -> startActivity(Intent(activity, ScotchesActivity::class.java))
                         1 -> Toast.makeText(activity, "じゃ", Toast.LENGTH_SHORT).show()
                         2 -> Toast.makeText(activity, "あめ", Toast.LENGTH_SHORT).show()
                         3 -> Toast.makeText(activity, "他", Toast.LENGTH_SHORT).show()
@@ -46,6 +48,11 @@ class MainFragment: androidx.fragment.app.Fragment() {
         adapter = TopListAdapter(requireContext(), data, R.layout.top_list_item)
         listView = v.findViewById(R.id.topList)
         listView.adapter = adapter
+    }
+
+    fun toScotch(){
+        val intent = Intent(activity, ScotchesActivity::class.java)
+        startActivity(intent)
     }
 
 }

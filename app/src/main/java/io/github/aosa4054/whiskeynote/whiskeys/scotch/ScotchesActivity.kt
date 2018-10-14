@@ -4,14 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.databinding.ScotchesListItemBinding
 
 class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavigator{
 
     lateinit var mViewModel: ScotchesViewModel
     lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
     lateinit var mAdapter: ScotchRecyclerViewAdapter
-    lateinit var binding: ScotchesListItemBinding
+    //lateinit var binding: ScotchesListItemBinding
 
     var fragment: ScotchesFragment? = null
 
@@ -19,11 +18,10 @@ class ScotchesActivity : AppCompatActivity(), ScotchesNavigator, ScotchItemNavig
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scotches)
-
     }
 
     override fun onDestroy() {
-        mViewModel.onActivityDestroyed()
+        //mViewModel.onActivityDestroyed()
         super.onDestroy()
     }
 
