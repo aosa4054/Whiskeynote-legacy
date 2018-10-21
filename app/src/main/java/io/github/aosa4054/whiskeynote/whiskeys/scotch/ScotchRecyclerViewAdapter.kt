@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
+import io.github.aosa4054.whiskeynote.data.entity.Whiskey
 
 
-class ScotchRecyclerViewAdapter(var scotches: List<Scotch>, var mNavigator: ScotchItemNavigator?):
+class ScotchRecyclerViewAdapter(var scotches: List<Whiskey>, var mNavigator: ScotchItemNavigator?):
         androidx.recyclerview.widget.RecyclerView.Adapter<ScotchRecyclerViewAdapter.ScotchViewHolder>()/*, View.OnClickListener*/ {
 
     private var mRecycler: androidx.recyclerview.widget.RecyclerView? = null
-    //private var mListener: AdapterView.OnItemClickListener? = null
 
     override fun onAttachedToRecyclerView(recyclerView: androidx.recyclerview.widget.RecyclerView) {
         super.onAttachedToRecyclerView(recyclerView)
@@ -42,23 +41,7 @@ class ScotchRecyclerViewAdapter(var scotches: List<Scotch>, var mNavigator: Scot
         mNavigator = null
     }
 
-    /*
-    fun setOnItemClickListener(listener: AdapterView.OnItemClickListener) {
-        mListener = listener
-    }
-
-    override fun onClick(v: View?) {
-        if (mRecycler == null){ return }
-        if (mListener != null){
-            val position: Int = mRecycler!!.getChildAdapterPosition(v)
-            val scotch: Scotch = scotches.get(position)
-            mListener!!.onItemClick(this, position, scotch)
-        }
-    }
-    */
-
     class ScotchViewHolder(val view: View): androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
-
     }
 }
 

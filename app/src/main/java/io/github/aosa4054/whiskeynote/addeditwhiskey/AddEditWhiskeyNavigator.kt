@@ -1,10 +1,9 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
+import io.github.aosa4054.whiskeynote.data.entity.Whiskey
 
 interface AddEditWhiskeyNavigator{
     fun chooseWhiskeyType()
-    //fun toastError()
-    fun getViewData(): Scotch
-    fun backToList(): Boolean
+    fun getViewData(): Whiskey
+    fun backToList()
 }

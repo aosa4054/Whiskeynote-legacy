@@ -1,15 +1,8 @@
 package io.github.aosa4054.whiskeynote.addeditwhiskey
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.textfield.TextInputLayout
 import io.github.aosa4054.whiskeynote.R
-import io.github.aosa4054.whiskeynote.data.entity.Scotch
-import java.util.*
 
 class AddEditWhiskeyActivity: AppCompatActivity(){
 

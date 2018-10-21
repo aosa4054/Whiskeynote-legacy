@@ -17,17 +17,4 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(mToolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
     }
-
-    fun toJapanese(view: View){
-        Toast.makeText(applicationContext, "ジャパ", LENGTH_SHORT).show()
-    }
-
-    fun toAmerican(view: View){
-        Toast.makeText(applicationContext, "アメ", LENGTH_SHORT).show()
-    }
-
-    fun toOthers(view: View){
-        Toast.makeText(applicationContext, "その他", LENGTH_SHORT).show()
-    }
-
 }
